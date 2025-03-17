@@ -1,0 +1,55 @@
+header{
+    /* background-color: aqua; */
+    flex-direction: row;
+    display: flex;
+    height: 60px;
+    width: 100%;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+div.logo{
+    height: 41px;
+    width: 267px;
+    background-image: url('../assets/bpjs.png') ;
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+}
+
+nav{
+    width: 800px;
+    height: 30px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+main{
+    /* background-color: red; */
+    height: 500px;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+}
+.paragraf{
+    align-content: center;
+    width: 512px;
+    height: 500px;
+    font-size: 20px;
+    justify-items: center;
+}
+
+.gambar{
+    background-color: blue;
+    background-image: url('../assets/gambar.jpeg');
+    background-size: cover;
+    height: 443px;
+    width: 664px;
+    align-self: center;
+}
