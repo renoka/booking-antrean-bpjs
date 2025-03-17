@@ -10,7 +10,7 @@
             justify-content: center;
             height: 100vh;
             align-items: center;
-            background-color: springgreen;
+            background: linear-gradient(180deg, #61d3f2, #7eaedb00);
         }
         div{
             width: 400px;
