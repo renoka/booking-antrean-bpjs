@@ -1,3 +1,29 @@
+<?php
+    include "../service/database.php";
+
+    // notif untuk berhasil atau tidak data saat daftar
+    $notif_daftar = "";
+
+
+    if (isset($_POST["daftar"])){
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        // input data ke database
+        $inputdata = "INSERT INTO user (username, password) VALUES ('$username', '$password')";
+
+        // cek apakah data sudah masuk atau belum
+        if($db->query($inputdata)){
+        //     echo "input data berhasil";
+            $notif_daftar = "Berhasil Daftar. Silakan Login";
+        }else{
+        //     echo "input data gagal ";
+            $notif_daftar = "Gagal Daftar. Silakan coba lagi";
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,8 +54,9 @@
 <body>
 <div>
     <h2>Daftar</h2>
-    
-    <form action="process_login.php" method="POST">
+
+    <i><?=$notif_daftar?></i>
+    <form action="register.php" method="POST">
         <label for="username" style="font-size: 21px;">Username:</label> <br>
         <input type="text" name="username" placeholder="masukan username" required style="height: 30px;
     width: 100%;
@@ -42,7 +69,7 @@
     text-align: center;
     font-size: 15px;"> <br> <br> <br>
             
-        <button type="submit" style="background-color: blue; color: white; border-radius: 5px; width: 100%; height: 30px">Daftar</button> <br> <br>
+        <button type="submit" style="background-color: blue; color: white; border-radius: 5px; width: 100%; height: 30px" name="daftar" >Daftar</button> <br> <br>
         <a href="index.php"><button type="button" style="border-radius: 5px; width: 100%; height: 30px;">Kembali</button></a>
 
     </form>
